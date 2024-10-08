@@ -1,6 +1,7 @@
 from chat_model import ChatModel
 from chat_history import ChatHistory
 from chat_app import ChatApp
+from dotenv import load_dotenv
 
 class AppFactory:
     """애플리케이션 초기화를 위한 팩토리 클래스"""
@@ -11,6 +12,8 @@ class AppFactory:
         EMBEDDING_MODEL_ID = 'amazon.titan-embed-text-v2:0'
         CLAUDE_HAIKU_ID = 'anthropic.claude-3-haiku-20240307-v1:0'
         CLAUDE_SONNET_ID = 'anthropic.claude-3-5-sonnet-20240620-v1:0'
+
+        load_dotenv()
         
         chat_model = ChatModel(CLAUDE_HAIKU_ID)
         chat_history = ChatHistory()
